@@ -9,7 +9,7 @@ class Cog1(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        print('Bot is ready.')
+        print('RDB is ready.')
 
     # Member Join and Leave
     @commands.Cog.listener()
