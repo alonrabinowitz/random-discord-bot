@@ -10,17 +10,6 @@ intents = discord.Intents.all()
 client = commands.Bot(command_prefix = '>', intents = intents)
 
 
-# @client.event
-# async def on_ready():
-#     print('RDB is ready.')
-
-# @client.event
-# async def on_member_join(member):
-#     print(f'{member} has joined a server.')
-#
-# @client.event
-# async def on_member_remove(member):
-#     print(f'{member} has left a server.')
 
 @client.event
 async def on_command_error(ctx, error):
