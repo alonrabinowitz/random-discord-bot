@@ -29,6 +29,7 @@ class Cog2(commands.Cog):
         await ctx.send('Chat has been cleared.')
         await asyncio.sleep(1)
         await ctx.channel.purge(limit=1)
+    
 
 def setup(client):
     client.add_cog(Cog2(client))

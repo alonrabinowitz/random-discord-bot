@@ -20,6 +20,25 @@ async def on_command_error(ctx, error):
         await asyncio.sleep(int(0.25))
         await ctx.channel.purge(limit=1)
 
+# chat filter
+with open('badwords.txt', 'r') as f:
+    words = f.read()
+    badwords = words.split()
+
+@client.event
+async def on_message(message):
+    msg = message.content
+    for word in badwords:
+        if word in msg:
+            await message.delete()
+            await message.channel.send("Dont use that word!")
+            await asyncio.sleep(int(2))
+            await message.channel.purge(limit=1)
+
+    # await message.process_message(message)
+    await client.process_commands(message)
+
+
 # Load cogs (external code)
 @client.command()
 async def load(ctx, extension):
