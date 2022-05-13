@@ -7,10 +7,10 @@ from discord.ext import commands
 
 intents = discord.Intents.all()
 
-client = commands.Bot(command_prefix = '.', intents = intents)
+client = commands.Bot(command_prefix = '>', intents = intents)
 
 
-
+# Send error message if unknown command is received
 @client.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
@@ -20,11 +20,12 @@ async def on_command_error(ctx, error):
         await asyncio.sleep(int(0.25))
         await ctx.channel.purge(limit=1)
 
-
+# Load cogs (external code)
 @client.command()
 async def load(ctx, extension):
     client.load_extension(f'cogs.{extension}')
 
+# Unload cogs (external code)
 @client.command()
 async def unload(ctx, extension):
     client.unload_extension(f'cogs.{extension}')

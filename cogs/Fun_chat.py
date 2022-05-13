@@ -6,7 +6,9 @@ class Cog4(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    # 8ball Command
+    # Magic 8ball Command
+    # Usage:
+    # >8ball <question>
     @commands.command(aliases=['8ball', '?'])
     async def _8ball(self, ctx, *, question):
         responses = ['It is certain.',

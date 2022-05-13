@@ -9,6 +9,8 @@ class Cog3(commands.Cog):
         self.client = client
 
     # Kick Command
+    # Usage:
+    # >kick <member> <reason>
     @commands.command(aliases=['k'])
     @commands.has_permissions(kick_members=True)
     async def kick(self, ctx, member: discord.Member, *, reason='Oops someone forgot to put one in!'):
@@ -128,6 +130,8 @@ class Cog3(commands.Cog):
             await ctx.send(f"{member}'s {timeperiod}{timeunit} mute timer has run out. {member} is now unmuted!")
 
     # Ban and Unban Commands
+    # Usage:
+    # >ban <member> <reason>
     @commands.command(aliases=['b'])
     @commands.has_permissions(ban_members=True)
     async def ban(self, ctx, member: discord.Member, *, reason='Oops someone forgot to input a reason!'):
@@ -135,6 +139,9 @@ class Cog3(commands.Cog):
         await ctx.channel.purge(limit=1)
         await ctx.send(f'{member} has been banned for the reason: ' + reason)
 
+    # Unban Command
+    # Usage:
+    # >unabn <member>
     @commands.command(aliases=['ub'])
     @commands.has_permissions(ban_members=True)
     async def unban(self, ctx, *, member):

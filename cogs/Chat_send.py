@@ -1,6 +1,5 @@
-import discord
 from discord.ext import commands
-from discord import Member
+
 
 class Cog6(commands.Cog):
 
@@ -8,6 +7,8 @@ class Cog6(commands.Cog):
         self.client = client
 
     # Duplicate Messages Command
+    # Usage:
+    # >scs <number of messages> <anonymously or not("n" or "y")> <message>
     @commands.command(aliases=['scs', 'send', 'scm'])
     @commands.has_permissions(manage_messages=True)
     async def shortcut_send(self, ctx, amount, anonymous='n', *, content):

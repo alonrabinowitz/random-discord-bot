@@ -7,6 +7,9 @@ class Cog2(commands.Cog):
     def __init__(self, client):
         self.client = client
 
+    # Delete messages from chat
+    # Usage:
+    # >clear <number of messages (default is 1 message)>
     @commands.command(aliases=['c'])
     @commands.has_permissions(manage_messages=True)
     async def clear(self, ctx, amount=1):
@@ -18,7 +21,7 @@ class Cog2(commands.Cog):
         await asyncio.sleep(1)
         await ctx.channel.purge(limit=1)
 
-
+    # Clear the chat
     @commands.command(aliases=['ca', 'clear all', 'clearall'])
     @commands.has_permissions(manage_messages=True)
     async def clear_all(self, ctx):

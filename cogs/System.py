@@ -7,6 +7,7 @@ class Cog1(commands.Cog):
     def __init__(self, client):
         self.client = client
 
+    # Send ready message to python console when bot is running
     @commands.Cog.listener()
     async def on_ready(self):
         print('RDB is ready.')
@@ -20,6 +21,7 @@ class Cog1(commands.Cog):
     async def on_member_remove(self, member):
         print(f'{member} has left the server.')
 
+    # Ping command
     @commands.command()
     async def ping(self, ctx):
         # await ctx.send('pong')

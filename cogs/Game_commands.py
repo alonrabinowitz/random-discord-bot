@@ -8,6 +8,8 @@ class Cog5(commands.Cog):
         self.client = client
 
     # Rock Paper Scissors Game Command
+    # Usage:
+    # >rps <choice ("rock", "paper", or "scissors")>
     @commands.command(aliases=['rps', 'rpsgame', 'rps_game'])
     async def rockpaperscissors_game(self, ctx, choice):
         rockpaperscissors_random = random.randint(1, 3)
@@ -53,6 +55,8 @@ class Cog5(commands.Cog):
                     f"ehhh, seems like you didn't pick a supported choice. The supported choices are: 'rock'('r'), 'paper'('p'), and 'scissors'('s'). What the flip is '{choice}'")
 
     # Get On Top Game Command
+    # Usage:
+    # >got <number (1-3)>
     @commands.command(aliases=['got'])
     async def get_on_top_gamecommand(self, ctx, which):
         if which == '1':
