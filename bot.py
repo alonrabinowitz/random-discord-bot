@@ -21,6 +21,7 @@ async def on_command_error(ctx, error):
         await ctx.channel.purge(limit=1)
 
 # chat filter
+# The word "swear" is added as a swear word for showcasing purposes.
 with open('badwords.txt', 'r') as f:
     words = f.read()
     badwords = words.split()
