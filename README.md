@@ -1,7 +1,7 @@
 # random-discord-bot
  A random discord bot for a school project
 # Non-command Features
- -Swear word filter
+ -Modular swear word filter
 # Commands
  \>ping
  
