@@ -1,8 +1,8 @@
 # random-discord-bot
  A random discord bot for a school project
 # Commands
- >ping
- >shortcut_send('scs', 'send', 'scm') <amount> <anonymous> <message>
+ \>ping
+ \>shortcut_send('scs', 'send', 'scm') <amount> <anonymous> <message>
  >clear('c') <amount=1>
  >clear_all('ca')
  >8ball('?') <question>
